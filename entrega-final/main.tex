@@ -1,0 +1,48 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage{inputenc}
+\usepackage{../config} 
+\date{}
+
+\begin{document}
+
+% Title page
+
+\include{titlepage/titlepage}
+\tableofcontents
+\parskip = 10pt
+
+\include{sections/context/problem-ct}
+
+% Objetivo General
+
+\input{sections/objectives/general}
+
+% Objetivos Específicos
+
+\input{sections/objectives/specific}
+
+% Estado del arte
+
+\twocolumn
+
+\input{sections/literature-review/litreview}
+
+
+% Method
+\onecolumn
+\input{sections/method/method}
+
+% Exploración de datos
+\input{sections/exploracion-datos/exp-desc-datos}
+
+
+% Bibliography
+
+\newpage
+\addcontentsline{toc}{section}{References}
+\nocite{*}
+\bibliographystyle{apacite}
+\setlength{\bibsep}{1em}
+\bibliography{bibliography.bib}
+
+\end{document}
