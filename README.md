@@ -1,7 +1,7 @@
 # Entregas y documentación del proyecto
 
-[Primera Entrega](./entrega-1/)
-[Entrega Final](./entrega-final/)
+- [Primera Entrega](./entrega-1/)
+- [Entrega Final](./entrega-final/)
 
 ---
 
