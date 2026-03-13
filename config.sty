@@ -12,7 +12,12 @@
 
 \RequirePackage{titlesec}
 \titleformat{\section}
-  {\color{darkblue}\normalfont\Large\bfseries}
+  {\color{darkblue}\normalfont\large\bfseries}
+  {\thesection}{1em}{}
+  [\vspace{-1em}]
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}
   {\thesection}{1em}{}
   [\vspace{-1em}]
 
@@ -23,7 +28,7 @@
 \RequirePackage{enumitem}
 \RequirePackage{multirow}
 \RequirePackage{multicol}
-\setlength{\columnsep}{1cm}
+\setlength{\columnsep}{0.7cm}
 \renewcommand{\familydefault}{\sfdefault}
 \RequirePackage{graphicx}
 \RequirePackage{subcaption}
