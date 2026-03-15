@@ -2,9 +2,23 @@
 
 \subsection{Enfoque técnico}
 Descripción de la propuesta de solución, indicando las técnicas que se utilizarán, con su justificación (cómo se alinea con los objetivos). Indicar la metodología de desarrollo de la solución y un diagrama de la solución propuesta.
+
+This project will begin with a thorough analysis of the dataset, presented in the following section. During this stage, we will identity it's structure, composition and possible pre-processing filters that can be applied to enhance the training data.
+
+Then, we will begin with the design of an ML/DL architecture based on the foundational models established in EgoVLP, LAVILA and JPoSE. Starting off from foundational models proves useful in fine-tuning and will enable an exploration of the impact of processing in multimodal retrieval. 
+
+To implement and experiment this architecture, we will use modern and robust MLOps pipeline that pulls weights from AVION ViT-L/14, SMS-Loss (2024) and CR-CLIP (2025). Experiment management will be done with \href{https://hydra.cc/}{HYDRA} and composable YAML files.
+
+This pipeline will enable experimentation and clear analysis of metrics (nDCG and mAP) in order to select and iterate on the best results.
+
 \subsection{Herramientas}
-Indicar herramientas, bibliotecas y plataformas que serán empleadas.
 
+The following libraries will be used:
 
-Describir el baseline del año pasado. 
-Proponer algo de pre-procesamiento de imágenes.
+\begin{lstlisting}
+    PyTorch, torchvision, torchaudio (CUDA 12.1)
+    transformers, timm, einops
+    hydra-core, omegaconf, pydantic
+    wandb, tensorboard
+    matplotlib, seaborn, plotly
+\end{lstlisting}
