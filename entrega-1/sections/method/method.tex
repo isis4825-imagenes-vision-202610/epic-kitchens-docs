@@ -1,6 +1,6 @@
 \section{Methodology and Proposed Focus}
 
-\subsection{Technical focus}
+\subsection*{Technical focus}
 
 The proposed solution follows a four-stage development methodology aligned with the specific objectives defined in Section~\ref{sec:objectives}.
 
@@ -21,7 +21,7 @@ Figure~\ref{fig:solutionflow} summarizes the expected inputs and outputs of the 
     \label{fig:solutionflow}
 \end{figure}
 
-\subsection{Libraries and Tools}
+\subsection*{Libraries and Tools}
 
 Table~\ref{tab:tools} lists the main libraries and platforms that will be used throughout the project. The stack follows the de facto standard for deep learning research with large pretrained models: PyTorch provides the computational backbone and native CUDA support required by the video encoders; \texttt{transformers} and \texttt{timm} give access to pretrained vision-language weights without reimplementation; \texttt{hydra-core} and \texttt{omegaconf} enforce reproducible, composable experiment configurations essential for systematic ablations; and \texttt{wandb} enables real-time tracking of training runs across multiple machines. Cloud and HPC infrastructure is necessary given the GPU memory requirements of ViT-L/14-scale models.
 
