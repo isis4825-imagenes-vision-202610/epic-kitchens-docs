@@ -1,13 +1,16 @@
-\section{Objetivos específicos}
+\section{Specific Objectives}
+\label{sec:objectives}
 
 \begin{enumerate}
 
-\item Analizar la estructura del dataset \href{https://epic-kitchens.github.io/}{\textit{EPIC-KITCHENS-100}} y las matrices de relevancia utilizadas en el reto de recuperación multimodal, identificando la organización de los segmentos de video, las descripciones textuales y sus relaciones semánticas.
+\item To analyze the structure of the \href{https://epic-kitchens.github.io/}{\textit{EPIC-KITCHENS-100}} dataset and the relevance matrices used in the multimodal retrieval challenge, identifying the organization of video segments, textual descriptions, and their semantic relationships, producing a structured characterization covering segment count, label distribution, and relevance matrix statistics, that will inform preprocessing and training decisions \textbf{(Weeks 1--2)}.
 
-\item Diseñar una arquitectura de aprendizaje profundo que integre representaciones visuales temporales y representaciones semánticas del lenguaje para proyectar ambas modalidades en un espacio de características compartido.
+\item To design a dual-encoder deep learning architecture that projects egocentric video segments and textual descriptions into a shared embedding space, incorporating the soft-label relevance matrices as supervision signal from training, with the architecture design validated by reproducing the published baseline scores on the validation split prior to any fine-tuning \textbf{(Weeks 3--4)}.
 
-\item Implementar y entrenar el modelo propuesto para estimar la similitud semántica entre pares video--texto y generar rankings de recuperación para ambas direcciones de búsqueda.
+\item To implement and train the proposed model to estimate semantic similarity between video--text pairs and generate retrieval rankings for both search directions, using the SMS-Loss~\cite{wang2024symmetricmultisimilaritylossepickitchens100} and the AVION ViT-L/14~\cite{zhao2023avion} encoder as the starting point for experimentation, targeting a first evaluated checkpoint on the validation set \textbf{(Weeks 5--7)}.
 
-\item Evaluar el desempeño del modelo mediante métricas de ranking como \textit{Normalized Discounted Cumulative Gain} (nDCG) y \textit{Mean Average Precision} (mAP), comparando los resultados con enfoques base reportados en la literatura.
+\item To evaluate the model's performance using \textit{Normalized Discounted Cumulative Gain} (nDCG) and \textit{Mean Average Precision} (mAP) on the EK-100 MIR validation set, targeting results that match or exceed the official JPoSE + MI-MM challenge baseline~\cite{wray2019jpose,miech2020milnce} \textbf{(Weeks 7--8)}.
 
 \end{enumerate}
+
+\noindent\textit{Note: these objectives are to be reviewed and revised as needed once the first experimental results are available, as early findings may require adjusting scope, architecture choices, or evaluation targets. Weeks 8--9 are reserved for final analysis and written report.}

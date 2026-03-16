@@ -1,4 +1,4 @@
-\documentclass[letterpaper, 10pt]{article}
+\documentclass[letterpaper, twocolumn, 10pt]{article}
 \usepackage{inputenc}
 \usepackage{../config} 
 \date{}
@@ -12,35 +12,40 @@
 % \tableofcontents
 \parskip = 5pt
 
-{\bfseries \Large \centering Recuperación Multi-Instancia Visual-Textual en Videos Egocéntricos: Desarrollo de Modelos de Alineación Semántica para el EPIC-KITCHENS-100 Challenge\par}
+\title{Video-Text Multi-Instance Retrieval in Egocentric videos: Developing a Model for Semantic Alignment for the EPIC-KITCHENS-100 Challenge}
 
-\begin{center}
-\begin{tabular}{ c c }
- María Castro Iregui  & Santiago Martínez Novoa \\ 
- Nicolás Rozo Fajardo & Juan Sebastián Urrea López 
-\end{tabular}
-\end{center}
+
+\twocolumn[
+  \maketitle
+  \begin{center}
+    \begin{tabular}{ c c }
+    María Castro Iregui  & Santiago Martínez Novoa \\ 
+    Nicolás Rozo Fajardo & Juan Sebastián Urrea López 
+    \end{tabular}
+    \end{center}
+
+  \noindent\rule{\linewidth}{0.4pt} % horizontal separator
+  \vspace{1em}
+]
+
+% {\bfseries \Large \centering Video-Text Multi-Instance Retrieval in Egocentric videos: Developing a Model for Semantic Alignment for the EPIC-KITCHENS-100 Challenge\par}
+
+
 % 
 
 \input{sections/context/problem-ct}
 
 % Objetivo General
-
 \input{sections/objectives/general}
 
 % Objetivos Específicos
-
 \input{sections/objectives/specific}
 
 % Estado del arte
-
-\twocolumn
-
 \input{sections/literature-review/litreview}
 
 
 % Method
-\onecolumn
 \input{sections/method/method}
 
 % Exploración de datos
