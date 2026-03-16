@@ -1,8 +1,9 @@
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/collage.png}
+    \includegraphics[width=0.7\columnwidth]{images/collage.png}
     \caption{Qualitative overview of EPIC-KITCHENS-100 with multiple example frames illustrating different kitchens, viewpoints and activities. Not all frames have an active action segment (shown as the action labeled below each frame).}
     \label{fig:dataset_collage}
+    \vspace{-1.2em}
 \end{figure}
 
 
@@ -12,14 +13,18 @@
 In this work we use the EPIC-KITCHENS-100 dataset, focusing on the Multi-Instance Retrieval (MIR) challenge, which provides trimmed egocentric action segments paired with English narrations recorded in 45 kitchens and totalling 100 hours of Full HD video (around 20M frames in 700 variable-length sequences)~\cite{damen2022rescaling,dimaetal2020dataset}. Videos were captured with head-mounted cameras in the participants' own kitchens, yielding non-scripted multi-day recordings with 97 verb classes and 300 noun classes, making EPIC-KITCHENS-100 the largest egocentric kitchen dataset currently available~\cite{damen2022rescaling}.
 
 
-\subsection{Qualitative overview}
+\textbf{Qualitative overview.} Figure~\ref{fig:dataset_collage} shows a collage of frames collected from the official EPIC-KITCHENS resources, illustrating the diversity of kitchens, participants and activities. The examples highlight the strongly egocentric viewpoint, the presence of hands and manipulated objects, and the substantial variation in illumination and background clutter.
 
+<<<<<<< HEAD
 
 Figure~\ref{fig:dataset_collage} shows a collage of frames collected from the official EPIC-KITCHENS resources, illustrating the diversity of kitchens, participants and activities~\cite{damen2022rescaling}. The examples highlight the strongly egocentric viewpoint, the presence of hands and manipulated objects, and the substantial variation in illumination and background clutter.
 
 
 \subsection{Video-level characteristics}
 
+=======
+\textbf{Video-level characteristics.} The analysis relies on the official file \texttt{EPIC\_100\_video\_info.csv}, which stores per-video duration, frame rate (\texttt{fps}) and spatial resolution (\texttt{width}~$\times$~\texttt{height}). Across the 700 recordings, the mean video duration is approximately 514\,s (8.6\,min) with a standard deviation of 599\,s, ranging from short clips of about 10\,s to long sessions of more than 1\,h (maximum 3708\,s). The average frame rate is 55.9\,fps, with most videos recorded either at 50\,fps or 59.94\,fps, and a few legacy sequences at 29.97, 48 or 90\,fps.
+>>>>>>> 2b47934 (fit ot 5pgs)
 
 The analysis relies on the official file \texttt{EPIC\_100\_video\_info.csv}, which stores per-video duration, frame rate (\texttt{fps}) and spatial resolution (\texttt{width}~$\times$~\texttt{height})~\cite{damen2022rescaling}. Across the 700 recordings, the mean video duration is approximately 514\,s (8.6\,min) with a standard deviation of 599\,s, ranging from short clips of about 10\,s to long sessions of more than 1\,h (maximum 3708\,s). The average frame rate is 55.9\,fps, with most videos recorded either at 50\,fps or 59.94\,fps, and a few legacy sequences at 29.97, 48 or 90\,fps~\cite{dimaetal2020dataset}.
 
@@ -46,9 +51,13 @@ Videos are predominantly recorded at a resolution of \(1920\times1080\) pixels: 
     \label{fig:video_duration_fps}
 \end{figure}
 
+<<<<<<< HEAD
 
 \subsection{Image-level characteristics}
 
+=======
+\textbf{Image-level characteristics.} For each action segment in the MIR train and test splits, frame-level properties are derived by combining the segment start and stop frames with the per-video resolution and \texttt{fps} metadata. Because the underlying videos are almost entirely Full HD, the distribution of frame sizes is sharply peaked at \(1920\times1080\) pixels, and the average number of pixels per frame across the MIR subset closely matches the dataset-wide value of approximately 2.07\,M pixels. The total pixel counts confirms that 75\% of the frames lie exactly at the Full HD resolution, with only a handful of frames at the two alternative resolutions mentioned above.
+>>>>>>> 2b47934 (fit ot 5pgs)
 
 For each action segment in the MIR train and test splits, frame-level properties are derived by combining the segment start and stop frames with the per-video resolution and \texttt{fps} metadata~\cite{damen2022rescaling}. Because the underlying videos are almost entirely Full HD, the distribution of frame sizes is sharply peaked at \(1920\times1080\) pixels, and the average number of pixels per frame across the MIR subset closely matches the dataset-wide value of approximately 2.07\,M pixels. The total pixel counts confirms that 75\% of the frames lie exactly at the Full HD resolution, with only a handful of frames at the two alternative resolutions mentioned above.
 
@@ -75,9 +84,13 @@ To characterise appearance statistics, a subset of 1000 RGB frames is sampled un
     \label{fig:intensity_stats}
 \end{figure}
 
+<<<<<<< HEAD
 
 \subsection{Segment-level statistics for MIR}
 
+=======
+\textbf{Segment-level statistics for MIR.} The MIR challenge operates on trimmed action segments with associated narrations rather than full untrimmed sequences, so we also explore statistics at the segment level using the retrieval annotation files \texttt{EPIC\_100\_retrieval\_train.csv} and \texttt{EPIC\_100\_retrieval\_test.csv}. Each row provides a unique segment identifier, the \texttt{video\_id}, and the corresponding \texttt{start\_frame} and \texttt{stop\_frame}. By combining these with the per-video \texttt{fps} values, we compute the duration of each segment in seconds as \(\texttt{duration} = (\texttt{stop\_frame} - \texttt{start\_frame} + 1)/\texttt{fps}\). 
+>>>>>>> 2b47934 (fit ot 5pgs)
 
 The MIR challenge operates on trimmed action segments with associated narrations rather than full untrimmed sequences, so we also explore statistics at the segment level using the retrieval annotation files \texttt{EPIC\_100\_retrieval\_train.csv} and \texttt{EPIC\_100\_retrieval\_test.csv}~\cite{damen2022rescaling,wray2019jpose}. Each row provides a unique segment identifier, the \texttt{video\_id}, and the corresponding \texttt{start\_frame} and \texttt{stop\_frame}. By combining these with the per-video \texttt{fps} values, we compute the duration of each segment in seconds as \(\texttt{duration} = (\texttt{stop\_frame} - \texttt{start\_frame} + 1)/\texttt{fps}\). 
 
