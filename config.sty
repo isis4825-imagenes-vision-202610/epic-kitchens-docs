@@ -19,7 +19,7 @@
   \titleformat{\subsection}
   {\color{black}\normalfont\normalsize\bfseries}
   {\thesubsection}{1em}{}
-  [\vspace{-0.5em}]
+  [\vspace{-0.7em}]
 
 \RequirePackage[colorlinks=true, linkcolor=darkblue, urlcolor=darkblue, citecolor=darkblue]{hyperref}
 
@@ -52,6 +52,14 @@
 \def\l@section#1#2{\begingroup\let\numberline\@gobble\latexl@section{#1}{#2}\endgroup}
 \def\l@subsection#1#2{\begingroup\let\numberline\@gobble\latexl@subsection{#1}{#2}\endgroup}
 \def\l@subsubsection#1#2{\begingroup\let\numberline\@gobble\latexl@subsubsection{#1}{#2}\endgroup}
+\makeatother
+
+\makeatletter
+\renewcommand{\maketitle}{
+  \begin{center}
+    {\LARGE \bfseries \@title \par}
+  \end{center}
+}
 \makeatother
 
 \setlength{\parindent}{0pt}
