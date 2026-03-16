@@ -4,9 +4,9 @@
 
 This project will begin with a thorough analysis of the dataset, presented in the following section. During this stage, we will identify its structure, composition and possible pre-processing filters that can be applied to enhance the training data.
 
-Then, we will begin with the design of an ML/DL architecture based on the foundational models established in EgoVLP, LAVILA and JPoSE. Starting off from foundational models proves useful in fine-tuning and will enable an exploration of the impact of processing in multimodal retrieval. 
+Then, we will begin with the design of an ML/DL architecture based on the foundational models established in EgoVLP~\cite{lin2022egovlp}, LAVILA~\cite{zhao2023lavila} and JPoSE~\cite{wray2019jpose}. Starting off from foundational models proves useful in fine-tuning and will enable an exploration of the impact of processing in multimodal retrieval. 
 
-To implement and experiment this architecture, we will use modern and robust MLOps pipeline that pulls weights from AVION ViT-L/14, SMS-Loss (2024) and CR-CLIP (2025). Experiment management will be done with \href{https://hydra.cc/}{HYDRA} and composable YAML files.
+To implement and experiment with this architecture, we will use a modern and robust MLOps pipeline that pulls weights from AVION ViT-L/14~\cite{zhao2023avion}, SMS-Loss~\cite{wang2024symmetricmultisimilaritylossepickitchens100} and CR-CLIP~\cite{he2025crclip}. Experiment management will be done with \href{https://hydra.cc/}{HYDRA} and composable YAML files.
 
 This pipeline will enable experimentation and clear analysis of metrics (nDCG and mAP) in order to select and iterate on the best results.
 
