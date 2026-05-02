@@ -1,0 +1,45 @@
+\section{Methodology and Proposed Focus}
+
+The proposed solution follows a four-stage development methodology aligned with the specific objectives defined in Section~\ref{sec:objectives}.
+
+\textbf{Stage 1 — Dataset analysis (O1).} The project begins with a thorough characterization of the EPIC-KITCHENS-100 dataset, covering segment count, label distribution, and the structure of the soft-label relevance matrices. This stage identifies applicable preprocessing filters and informs all subsequent training decisions, ensuring that the supervision signal is correctly extracted from the graded relevance annotations rather than reduced to binary correspondences.
+
+\textbf{Stage 2 — Architecture design (O2).} Based on the dataset analysis, we will design a dual-encoder architecture that projects egocentric video segments and textual descriptions into a shared embedding space. The design builds on the representational foundations of EgoVLP~\cite{lin2022egovlp}, LAVILA~\cite{zhao2023lavila}, and JPoSE~\cite{wray2019jpose}, which have demonstrated strong performance in egocentric video-language tasks. Starting from these pretrained models reduces training cost and allows the project to focus on the retrieval-specific components rather than large-scale pretraining. The architecture will be validated by reproducing published baseline scores on the validation split prior to any fine-tuning.
+
+\textbf{Stage 3 — Implementation and training (O3).} The validated architecture will be implemented using pretrained weights from AVION ViT-L/14~\cite{zhao2023avion} as the visual backbone, chosen for its strong performance on EK-100 and its efficiency for single-machine training. The SMS-Loss~\cite{wang2024symmetricmultisimilaritylossepickitchens100} will serve as the training objective, as it directly incorporates the soft-label relevance matrices into the loss computation symmetrically over both modalities, making it better suited for multi-instance retrieval than standard contrastive losses. The implementation also draws on CR-CLIP~\cite{he2025crclip}, the current state-of-the-art on the EK-100 MIR leaderboard, as a reference for context refinement strategies. Experiment management will be handled with \href{https://hydra.cc/}{Hydra} and composable YAML configuration files, enabling systematic hyperparameter sweeps. Due to the GPU-intensiveness of the models, training will be deployed on cloud infrastructure and potentially on Universidad de los Andes' computing cluster.
+
+\textbf{Stage 4 — Evaluation and iteration (O4).} Model performance will be assessed using nDCG and mAP on the EK-100 MIR validation set, with the JPoSE + MI-MM challenge baseline as the minimum target. The MLOps pipeline enables rapid iteration between Stages 3 and 4, allowing architecture and loss function choices to be revised based on empirical results.
+
+Figure~\ref{fig:solutionflow} summarizes the expected inputs and outputs of the proposed pipeline for both retrieval directions.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\columnwidth]{images/flow.png}
+    \caption{Diagram of solution with expected inputs and outputs. Images adapted from~\cite{dimaetal2020dataset}.}
+    \label{fig:solutionflow}
+\end{figure}
+
+
+\subsection*{Libraries and Tools}
+
+Table~\ref{tab:tools} lists the main libraries and platforms that will be used throughout the project. The stack follows the de facto standard for deep learning research with large pretrained models: PyTorch provides the computational backbone and native CUDA support required by the video encoders; \texttt{transformers} and \texttt{timm} give access to pretrained vision-language weights without reimplementation; \texttt{hydra-core} and \texttt{omegaconf} enforce reproducible, composable experiment configurations essential for systematic ablations; and \texttt{wandb} enables real-time tracking of training runs across multiple machines. Cloud and HPC infrastructure is necessary given the GPU memory requirements of ViT-L/14-scale models.
+
+\begin{table}[ht]
+\centering
+\small
+\resizebox{\columnwidth}{!}{\begin{tabular}{ll}
+\hline
+\textbf{Category} & \textbf{Tools} \\
+\hline
+Deep learning & PyTorch, torchvision, torchaudio (CUDA 12.1) \\
+Model components & transformers, timm, einops \\
+Experiment management & hydra-core, omegaconf, pydantic \\
+Tracking \& logging & Weights \& Biases (wandb), TensorBoard \\
+Visualization & matplotlib, seaborn, plotly \\
+Infrastructure & Cloud GPU instances, Uniandes HPC cluster \\
+\hline
+\end{tabular}}
+\caption{Libraries and platforms used in the project.}
+\label{tab:tools}
+\vspace{-1em}
+\end{table}
