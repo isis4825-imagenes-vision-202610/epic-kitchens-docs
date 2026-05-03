@@ -25,19 +25,19 @@
 
 \begin{document}
 %
-\title{Contribution Title}
+\title{Video-Text Multi-Instance Retrieval in Egocentric videos: Developing a Model for Semantic Alignment for the EPIC-KITCHENS-100 Challenge}
 %
 %\titlerunning{Abbreviated paper title}
 % If the paper title is too long for the running head, you can set
 % an abbreviated paper title here
 
 %
-\author{Juan Sebastián Urrea López \inst{1}\orcidID{0000-1111-2222-3333} \and
+\author{Juan Sebastián Urrea López \inst{1}\orcidID{0009-0006-9814-7765} \and
 Nicolás Rozo Fajardo \inst{1}\orcidID{1111-2222-3333-4444} \and
-Santiago Martínez Novoa \inst{1}\orcidID{2222--3333-4444-5555}
-\and María Castro Iregui \inst{1} \and Haydemar Maria Nuñez Castro \inst{1} \orcidID{} \and Juan Pablo Reyes Gomez \inst{1} \orcidID{}}
+Santiago Martínez Novoa \inst{1}\orcidID{0009-0002-4730-8507}
+\and María Castro Iregui \inst{1} \and Haydemar Maria Nuñez Castro \inst{1} \orcidID{} \and Juan Pablo Reyes Gomez \inst{1} \orcidID{0009-0004-3444-2226}}
 %
-\authorrunning{F. Author et al.}
+\authorrunning{F. Author et al.} % ! FIXME update
 % First names are abbreviated in the running head.
 % If there are more than two authors, 'et al.' is used.
 %
@@ -46,44 +46,49 @@ Santiago Martínez Novoa \inst{1}\orcidID{2222--3333-4444-5555}
 %
 \maketitle              % typeset the header of the contribution
 %
+
+% TODO: Abstract
 \begin{abstract}
 The abstract should briefly summarize the contents of the paper in
 150--250 words.
 
 \keywords{First keyword  \and Second keyword \and Another keyword.}
 \end{abstract}
-%
-%
-%
-\section{Introduction}
 
+% -----------------------------------------------------------
+% |                                                         |
+% -----------------------------------------------------------
 
+% Introduction
 \input{sections/context/problem-ct.tex}
 
 % Objetivo General
-\input{sections/objectives/general}
+% \input{sections/objectives/general}
 
 % Objetivos Específicos
-\input{sections/objectives/specific}
+% \input{sections/objectives/specific}
 
 % Estado del arte
 \input{sections/literature-review/litreview}
 
+% Materiales 
+\input{sections/materials/materials.tex}
 
-% Method
+% Methods
 \input{sections/method/method}
 
-% Exploración de datos
-\input{sections/dataset/data-description}
+
+% Results
+\input{sections/results/results.tex}
+
+% Discussion
+\input{sections/discussion/discussion.tex}
+
+% Conclusions
+\input{sections/discussion/conclusions.tex}
 
 
-%
-% ---- Bibliography ----
-%
-% BibTeX users should specify bibliography style 'splncs04'.
-% References will then be sorted and formatted in the correct style.
-%
 \bibliographystyle{splncs04}
-\bibliography{mybibliography}
+\bibliography{bibliography}
 
 \end{document}

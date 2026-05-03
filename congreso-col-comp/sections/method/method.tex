@@ -1,8 +1,13 @@
 \section{Methodology and Proposed Focus}
 
-The proposed solution follows a four-stage development methodology aligned with the specific objectives defined in Section~\ref{sec:objectives}.
+The proposed solution follows a four-stage development methodology aligned with \textbf{TBD CRISP-ML?}
+%  with the specific objectives defined in Section~\ref{sec:objectives}.
+
+
 
 \textbf{Stage 1 — Dataset analysis (O1).} The project begins with a thorough characterization of the EPIC-KITCHENS-100 dataset, covering segment count, label distribution, and the structure of the soft-label relevance matrices. This stage identifies applicable preprocessing filters and informs all subsequent training decisions, ensuring that the supervision signal is correctly extracted from the graded relevance annotations rather than reduced to binary correspondences.
+
+\input{sections/dataset/data-description.tex}
 
 \textbf{Stage 2 — Architecture design (O2).} Based on the dataset analysis, we will design a dual-encoder architecture that projects egocentric video segments and textual descriptions into a shared embedding space. The design builds on the representational foundations of EgoVLP~\cite{lin2022egovlp}, LAVILA~\cite{zhao2023lavila}, and JPoSE~\cite{wray2019jpose}, which have demonstrated strong performance in egocentric video-language tasks. Starting from these pretrained models reduces training cost and allows the project to focus on the retrieval-specific components rather than large-scale pretraining. The architecture will be validated by reproducing published baseline scores on the validation split prior to any fine-tuning.
 
