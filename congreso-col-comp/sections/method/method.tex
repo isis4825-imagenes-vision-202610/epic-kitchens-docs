@@ -25,7 +25,7 @@ Figure~\ref{fig:solutionflow} summarizes the expected inputs and outputs of the 
 \end{figure}
 
 
-\subsection*{Libraries and Tools}
+\subsection{Libraries and Tools}
 
 Table~\ref{tab:tools} lists the main libraries and platforms that will be used throughout the project. The stack follows the de facto standard for deep learning research with large pretrained models: PyTorch provides the computational backbone and native CUDA support required by the video encoders; \texttt{transformers} and \texttt{timm} give access to pretrained vision-language weights without reimplementation; \texttt{hydra-core} and \texttt{omegaconf} enforce reproducible, composable experiment configurations essential for systematic ablations; and \texttt{wandb} enables real-time tracking of training runs across multiple machines. Cloud and HPC infrastructure is necessary given the GPU memory requirements of ViT-L/14-scale models.
 
@@ -36,12 +36,12 @@ Table~\ref{tab:tools} lists the main libraries and platforms that will be used t
 \hline
 \textbf{Category} & \textbf{Tools} \\
 \hline
-Deep learning & PyTorch, torchvision, torchaudio (CUDA 12.1) \\
+Deep learning & \texttt{PyTorch, torchvision, torchaudio} (CUDA 12.1) \\
 Model components & transformers, timm, einops \\
 Experiment management & hydra-core, omegaconf, pydantic \\
 Tracking \& logging & Weights \& Biases (wandb), TensorBoard \\
-Visualization & matplotlib, seaborn, plotly \\
-Infrastructure & Cloud GPU instances, Uniandes HPC cluster \\
+Visualization & \texttt{matplotlib, seaborn, plotly} \\
+Infrastructure & Cloud GPU instances - Google Colab \\
 \hline
 \end{tabular}}
 \caption{Libraries and platforms used in the project.}
