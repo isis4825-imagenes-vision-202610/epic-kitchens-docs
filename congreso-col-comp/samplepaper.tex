@@ -35,14 +35,13 @@
 %
 \titlerunning{Video-Text Multi-Instance Retrieval on EPIC-KITCHENS-100}
 %
-\author{Juan Sebastián Urrea López\inst{1}\orcidID{0009-0006-9814-7765} \and
-Nicolás Rozo Fajardo\inst{1} \and
+\author{ Nicolás Rozo Fajardo\inst{1} \and
 Santiago Martínez Novoa\inst{1}\orcidID{0009-0002-4730-8507} \and
-María Castro Iregui\inst{1} \and
+María Castro Iregui\inst{1} \and Juan Sebastián Urrea López\inst{1}\orcidID{0009-0006-9814-7765} \and
 Haydemar María Núñez Castro\inst{1} \and
 Juan Pablo Reyes Gómez\inst{1}\orcidID{0009-0004-3444-2226}}
 %
-\authorrunning{J. S. Urrea et al.}
+\authorrunning{N. Rozo et al.}
 %
 \institute{Universidad de los Andes, Cra. 1 N\textsuperscript{o} 18A--12, Bogot\'a, Colombia\\
 \email{\{js.urrea, n.rozo, s.martinezn, m.castroi, h.nunez, jp.reyesg\}@uniandes.edu.co}}
@@ -51,7 +50,7 @@ Juan Pablo Reyes Gómez\inst{1}\orcidID{0009-0004-3444-2226}}
 %
 
 \begin{abstract}
-Multi-instance video-text retrieval in egocentric video poses challenges that binary contrastive objectives do not capture: a single textual query may align with several video segments at different degrees of relevance, and first-person video introduces strong viewpoint, illumination and motion variability. We address the EPIC-KITCHENS-100 Multi-Instance Retrieval (MIR) challenge through three progressively stronger approaches: (i)~a JPoSE-based zero-fine-tuning baseline that exploits part-of-speech embeddings; (ii)~a score-level ensemble of three pre-trained retrieval models (JPoSE, MI-MM and MMEN) with optional graph-diffusion re-ranking on visual and textual k-nearest-neighbour graphs; and (iii)~end-to-end fine-tuning of an AVION ViT-L/14 dual encoder with the Symmetric Multi-Similarity (SMS) loss, which directly consumes the soft-label relevancy matrices, enhanced with horizontal-flip and longer-clip test-time augmentation. Across six iterations, average nDCG on the official Codabench leaderboard rises from \textbf{53.53} (JPoSE alone) to \textbf{55.82} (ensemble + re-ranking) and finally to \textbf{69.68} (AVION ViT-L + SMS, 16~epochs, with TTA), an absolute gain of \textbf{+16.15}~nDCG. We analyse where each gain originates---encoder capacity, soft-label supervision, test-time augmentation and additional epochs---and outline a model-soup-style ensemble of differently-trained ViT-L+SMS instances as future work, motivated by the compute and offline-evaluation constraints encountered.
+Multi-instance video-text retrieval in egocentric video poses challenges that binary contrastive objectives do not capture: a single textual query may align with several video segments at different degrees of relevance, and first-person video introduces strong viewpoint, illumination and motion variability. We address the EPIC-KITCHENS-100 Multi-Instance Retrieval (MIR) challenge through three progressively stronger approaches: (i)~a JPoSE-based zero-fine-tuning baseline that exploits part-of-speech embeddings; (ii)~a score-level ensemble of three pre-trained retrieval models (JPoSE, MI-MM and MMEN) with optional graph-diffusion re-ranking on visual and textual k-nearest-neighbour graphs; and (iii)~end-to-end fine-tuning of an AVION ViT-L/14 dual encoder with the Symmetric Multi-Similarity (SMS) loss, which directly consumes the soft-label relevancy matrices, enhanced with horizontal-flip and longer-clip test-time augmentation. Across six iterations, average nDCG on the official Codabench leaderboard rises from \textbf{53.53} (JPoSE alone) to \textbf{55.82} (ensemble + re-ranking) and finally to \textbf{69.68} (AVION ViT-L + SMS, 16~epochs, with TTA), an absolute gain of \textbf{+16.15}~nDCG. We analyse where each gain originates, whether encoder capacity, soft-label supervision, test-time augmentation and additional epochs, and outline a model-soup-style ensemble of differently-trained ViT-L+SMS instances as future work, motivated by the compute and offline-evaluation constraints encountered.
 
 \keywords{Egocentric video \and Multi-instance retrieval \and Vision-language models \and Symmetric multi-similarity loss \and EPIC-KITCHENS-100.}
 \end{abstract}
@@ -64,13 +63,13 @@ Multi-instance video-text retrieval in egocentric video poses challenges that bi
 \input{sections/context/problem-ct.tex}
 
 % State of the Art
-\input{sections/literature-review/litreview}
+\input{sections/literature-review/litreview.tex}
 
 % Materials (dataset + hardware + software)
 \input{sections/materials/materials.tex}
 
 % Methods
-\input{sections/method/method}
+\input{sections/method/method.tex}
 
 % Results
 \input{sections/results/results.tex}
