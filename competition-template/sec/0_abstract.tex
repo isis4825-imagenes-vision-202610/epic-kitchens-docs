@@ -1,7 +1,3 @@
 \begin{abstract}
-The ABSTRACT is to be in fully justified italicized text, at the top of the left-hand column, below the author and affiliation information.
-Use the word ``Abstract'' as the title, in 12-point Times, boldface type, centered relative to the column, initially capitalized.
-The abstract is to be in 10-point, single-spaced type.
-Leave two blank lines after the Abstract, then begin the main text.
-Look at previous \confName abstracts to get a feel for style and length.
+We address the EPIC-KITCHENS-100 Multi-Instance Retrieval (MIR) challenge through three progressively stronger approaches: (i)~a JPoSE-based zero-fine-tuning baseline that exploits part-of-speech embeddings; (ii)~a score-level ensemble of three pre-trained retrieval models (JPoSE, MI-MM and MMEN) with optional graph-diffusion re-ranking on visual and textual k-nearest-neighbour graphs; and (iii)~end-to-end fine-tuning of an AVION ViT-L/14 dual encoder with the Symmetric Multi-Similarity (SMS) loss, which directly consumes the soft-label relevancy matrices, enhanced with horizontal-flip and longer-clip test-time augmentation. Across six iterations, average nDCG on the official Codabench leaderboard rises from \textbf{53.53} (JPoSE alone) to \textbf{55.82} (ensemble + re-ranking) and finally to \textbf{69.68} (AVION ViT-L + SMS, 16~epochs, with TTA), an absolute gain of \textbf{+16.15}~nDCG. We analyse where each gain originates, whether encoder capacity, soft-label supervision, test-time augmentation and additional epochs, and outline a model-soup-style ensemble of differently-trained ViT-L+SMS instances as future work, motivated by the compute and offline-evaluation constraints encountered.
 \end{abstract}
