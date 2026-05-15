@@ -17,6 +17,7 @@ Table~\ref{tab:iterations} reports the official Codabench nDCG~AVG for each of t
 \caption{Official Codabench nDCG~AVG (\%) for the six submitted configurations of Section~\ref{sec:methods}. The $\Delta$ column reports the marginal change with respect to the previous row. Best per approach in \textbf{bold}.}
 \label{tab:iterations}
 \setlength{\tabcolsep}{6pt}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{l l l c c}
 \toprule
 \textbf{\#} & \textbf{Approach} & \textbf{Change w.r.t.\ previous row} & \textbf{nDCG AVG} & $\Delta$ \\
@@ -34,6 +35,7 @@ Table~\ref{tab:iterations} reports the official Codabench nDCG~AVG for each of t
 \multicolumn{3}{l}{\textbf{Total improvement, configuration~1 $\to$ configuration~6}} & --   & \textbf{+16.15} \\
 \bottomrule
 \end{tabular}
+}
 \end{table}
 
 The results show a clear hierarchy of effects. First, ensemble fusion of the three frozen pretrained models contributes $+1.78$~nDCG over the JPoSE baseline, indicating that JPoSE, MI-MM and MMEN are complementary enough for score averaging to recover variance that none of them captures individually. Second, graph-diffusion re-ranking adds $+0.51$~nDCG on top of the ensemble at no training cost, consistent with the magnitude of the gains reported in image retrieval~\cite{iscen2017diffusion}. Third, replacing the inference-time pipeline with the AVION ViT-L + SMS configuration produces the largest jump in the table, $+12.98$~nDCG. Fourth, post-fine-tuning refinements behave as expected: TTA adds $+0.68$~nDCG at no training cost, and continuing fine-tuning for six additional epochs on top of the initial 10-epoch run (16 epochs in total) adds $+0.20$~nDCG, suggesting that single-checkpoint training is approaching its plateau.
