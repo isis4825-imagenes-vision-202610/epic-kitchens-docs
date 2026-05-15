@@ -2,8 +2,8 @@
 \backcite {damen2022rescaling}{{1}{1}{section.1}}
 \backcite {wray2021semantic}{{1}{1}{section.1}}
 \backcite {jarvelin2002ndcg}{{1}{1}{section.1}}
-\backcite {wray2021semantic}{{1}{2.1}{subsection.2.1}}
 \backcite {damen2022rescaling}{{2}{1}{figure.caption.1}}
+\backcite {wray2021semantic}{{2}{2.1}{subsection.2.1}}
 \backcite {wray2019jpose}{{2}{2.2}{subsection.2.2}}
 \backcite {miech2020milnce}{{2}{2.3}{subsection.2.3}}
 \backcite {wray2019jpose}{{2}{2.3}{subsection.2.3}}
@@ -12,7 +12,7 @@
 \backcite {zhao2023avion}{{2}{2.4}{subsection.2.4}}
 \backcite {zhao2023lavila}{{2}{2.4}{subsection.2.4}}
 \backcite {wang2024symmetricmultisimilaritylossepickitchens100}{{2}{2.4}{subsection.2.4}}
-\backcite {wray2021semantic}{{2}{2.4}{section*.4}}
+\backcite {wray2021semantic}{{3}{2.4}{section*.4}}
 \backcite {wang2019multisimilarity}{{3}{2.4}{section*.4}}
 \backcite {wang2024smsloss_repo}{{3}{2.4}{section*.5}}
 \backcite {dao2022flashattention}{{3}{2.4}{section*.5}}
@@ -22,8 +22,7 @@
 \backcite {krizhevsky2012alexnet}{{3}{2.4}{section*.7}}
 \backcite {wray2021semantic}{{3}{3.1}{subsection.3.1}}
 \backcite {wray2019jpose}{{3}{3.1}{subsection.3.1}}
-\backcite {he2025crclip}{{3}{3.2}{subsection.3.2}}
-\backcite {he2025crclip}{{4}{1}{table.caption.8}}
+\backcite {he2025crclip}{{4}{3.2}{subsection.3.2}}
 \backcite {iscen2017diffusion}{{4}{3.2}{table.caption.8}}
 \backcite {wortsman2022modelsoups}{{4}{4}{section.4}}
 \backcite {iscen2017diffusion}{{4}{4}{section.4}}
@@ -31,9 +30,10 @@
 \backcite {zhao2023lavila}{{4}{4}{section.4}}
 \backcite {wang2024symmetricmultisimilaritylossepickitchens100}{{4}{4}{section.4}}
 \backcite {wray2021semantic}{{4}{4}{section.4}}
-\backcite {krizhevsky2012alexnet}{{5}{4}{section.4}}
-\backcite {wang2024symmetricmultisimilaritylossepickitchens100}{{5}{4}{section.4}}
-\backcite {he2025crclip}{{5}{4}{section.4}}
+\backcite {krizhevsky2012alexnet}{{4}{4}{section.4}}
+\backcite {wang2024symmetricmultisimilaritylossepickitchens100}{{4}{4}{section.4}}
+\backcite {he2025crclip}{{4}{4}{section.4}}
+\backcite {he2025crclip}{{5}{1}{table.caption.8}}
 \backcite {he2025crclip}{{5}{5}{section.5}}
 \backcite {wang2024symmetricmultisimilaritylossepickitchens100}{{5}{7}{section.7}}
 \backcite {zhao2023avion}{{5}{7}{section.7}}
