@@ -1,0 +1,41 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{Evaluation protocol}
+\label{sec:results:protocol}
+
+All configurations are evaluated under a single protocol on the official EPIC-KITCHENS-100 MIR benchmark on Codabench\footnote{\url{https://www.codabench.org/competitions/12008/}}. Each submission is a Codabench-compatible ZIP containing the $9{,}668\times 3{,}842$ similarity matrix serialized as a protocol-2 pickle with a numpy namespace shim. It is scored by the grader against the held-out test relevance matrix~\cite{wray2021semantic} and the grader returns the average nDCG (Eq.~\ref{eq:ndcg}) used to rank submissions. Because the test relevance matrix is not publicly released, mAP and per-direction nDCG cannot be computed offline; the official Codabench leaderboard nDCG~AVG is therefore the single primary metric.
+
+\subsection{Comparative results across configurations}
+\label{sec:results:main}
+
+Table~\ref{tab:iterations} reports the official Codabench nDCG~AVG for each of the six submitted configurations described in Sections~\ref{sec:methods:jpose}--\ref{sec:methods:avion}, with the marginal change between consecutive submissions. The trajectory closes more than half of the gap between feature-based baselines and the current public state of the art (CR-CLIP at 82.10~nDCG~\cite{he2025crclip}) on a single GPU and using a total of sixteen epochs of fine-tuning.
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Official Codabench nDCG~AVG (\%) for the six submitted configurations of Section~\ref{sec:methods}. The $\Delta$ column reports the marginal change with respect to the previous row. Best per approach in \textbf{bold}.}
+\label{tab:iterations}
+\setlength{\tabcolsep}{6pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l l l c c}
+\toprule
+\textbf{\#} & \textbf{Approach} & \textbf{Change w.r.t.\ previous row} & \textbf{nDCG AVG} & $\Delta$ \\
+\midrule
+1 & A1 -- JPoSE      & Feature-based baseline (no fine-tune)             & 53.53 & --     \\[1pt]
+\midrule
+2 & A2 -- Ensemble   & + 3-model ensemble (no re-ranking)                & 55.31 & +1.78  \\
+3 & A2 -- Ensemble   & + Graph-diffusion re-ranking ($k{=}20$, $\alpha{=}0.3$) & \textbf{55.82} & +0.51  \\
+\midrule
+4 & A3 -- AVION+SMS  & Replace pipeline by AVION ViT-L + SMS, 10 ep      & 68.80 & +12.98 \\
+5 & A3 -- AVION+SMS  & + TTA: \texttt{--flip --clip-length 32}           & 69.48 & +0.68  \\
+6 & A3 -- AVION+SMS  & + 6 additional fine-tuning epochs (10 ep + 6 ep, 16 total) & \textbf{69.68} & +0.20  \\
+\midrule
+\multicolumn{3}{l}{\textit{Public leaderboard SOTA, CR-CLIP~\cite{he2025crclip}}}    & 82.10 & --     \\
+\multicolumn{3}{l}{\textbf{Total improvement, configuration~1 $\to$ configuration~6}} & --   & \textbf{+16.15} \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+The results show a clear hierarchy of effects. First, ensemble fusion of the three frozen pretrained models contributes $+1.78$~nDCG over the JPoSE baseline, indicating that JPoSE, MI-MM and MMEN are complementary enough for score averaging to recover variance that none of them captures individually. Second, graph-diffusion re-ranking adds $+0.51$~nDCG on top of the ensemble at no training cost, consistent with the magnitude of the gains reported in image retrieval~\cite{iscen2017diffusion}. Third, replacing the inference-time pipeline with the AVION ViT-L + SMS configuration produces the largest jump in the table, $+12.98$~nDCG. Fourth, post-fine-tuning refinements behave as expected: TTA adds $+0.68$~nDCG at no training cost, and continuing fine-tuning for six additional epochs on top of the initial 10-epoch run (16 epochs in total) adds $+0.20$~nDCG, suggesting that single-checkpoint training is approaching its plateau.
